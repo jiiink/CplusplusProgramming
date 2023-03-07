@@ -1,7 +1,8 @@
-#include <iostream>
+#include <stdio.h>
 
 int main(void) {
-	std::cout << "Hello\n";
+	printf("Hello\n");
+
 
 	return 0;
 }
