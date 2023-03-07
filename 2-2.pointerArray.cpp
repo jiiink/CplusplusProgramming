@@ -9,9 +9,9 @@ int main(void) {
 	// 주석1
 	//*
 	//*b = 10;//pointer 변수b의 값은 run-time에 초기화될 수 없다 - 이해 필요
-	b = a;
-	*b = 10;
-	//*b = a; // int * 형식의 값을 int으로 (entity로) 치환할 수 없다
+	//b = a;
+	//*b = 10;
+	*b = a; // int * 형식의 값을 int으로 (entity로) 치환할 수 없다
 	printf("a의 주소: %p\n",a);
 	printf("b의주소: %p\n",b);
 	printf("a[0] = %d\n",a[0]);
