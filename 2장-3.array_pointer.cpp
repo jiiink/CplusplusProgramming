@@ -20,7 +20,7 @@ void main(){
 	int *b; b = a[2]; 
 	printf("*(++b)) = %d, ", *(++b)); printf("*(++b)) = %d\n\n", *(++b));
 
-	int *A[3];
+	int *A[3]; //array of pointer
 	int B[3][4]={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
 	int (*Q)[4];//pointer to array
 

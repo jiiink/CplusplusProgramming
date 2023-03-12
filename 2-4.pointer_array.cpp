@@ -6,25 +6,28 @@ void main()
 {
     // ******************배열 pointer******************
     //1차원 배열 선언 및 초기화
-    int a1[4] = {11,12,13,14};
+    int a1[5] = {5,4,3,2,1};
     //2차원 배열 선언 및 초기화
-    int a2[3][4] = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};  
+    int a2[3][5] = {{0,5,10,15,20},{1,6,11,16,21},{2,7,12,17,22}};  
 
     // 1차원 배열에 대한 pointer 선언
     int *ap1 = a1;  
     //4개의 열을 가지는 배열을 가리키는 array to pointer 선언
-    int (*ap2)[4];
+    int (*ap2)[5];
     ap2 = a2; 
     //*ap2 = a2; // *ap2는 배열 [5]을 가리키는 배열 이름 상수로 간주, lvalue가 아니다.
     //*ap2 = *a2; // 왼쪽 피연산자는 l-value이어야 합니다.
 	*ap2[0] = 100;//*ap2는 lvalue가 아니지마는 *ap2[0]은 lvalue이다
+    printf("Before : %p\n", a2);
 
     // int *ap3; ap3 = *a2;와 같은 연산이다. ap3은 row 0의 시작주소를 갖는다.
-    int *ap3 = *a2; //다음 row
+    int *ap3 = *(a2+1); //다음 row
+    printf("*ap3 = %d\n", *ap3);
+    printf("After : %p\n", a2);
     int *p = (*a2+1); //다음 column
 	//int *q[3] = a2; //q는 array이므로 초기화하기 위한 {..}이 필요하다.
-    int (*q)[4] = a2; //q는 pointer to array이므로 배열 상수 이름으로 초기화 가능
-	
+    int (*q)[5] = a2; //q는 pointer to array이므로 배열 상수 이름으로 초기화 가능
+	/*
 	//1번 주석
     //*
 	printf("a2 = %p, ap3 = %p, p = %p\n", a2, ap3, p);
@@ -38,6 +41,7 @@ void main()
     printf("ap1[0] : %d\n",ap1[0]); 
     printf("*a1 : %d\n",*a1);//a1++는 허용되지 않는다
     printf("*ap1 : %d\n",*ap1++); //ap1++는 가능
+    //printf("*++ap1 : %d\n", *++ap1);
 	printf("*ap1++ : %d\n",*ap1);
 
 	printf("\n Array a2[][]에 대한 연산\n");
@@ -50,7 +54,7 @@ void main()
     printf("*(p+1) : %d\n",*(p+1));
     printf("*q : %p\n",*q);
     printf("*q[0] : %d\n",*q[0]);
-    //*/
+    */
 
 	//2번 주석
     //*

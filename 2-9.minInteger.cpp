@@ -13,6 +13,7 @@ int main(void){
     printf("%d 과 %d 중 작은 값은?\n", *min(&num1, &num2), num3);
     printf("%d\n\n", *min(min(&num1, &num2), &num3));
 	    // code 작성 부분: min(min(min..))) 또는 min(min(..), min(..)) code 작성
+    printf("%d\n", *min(min(min(&num1, &num2), &num3), &num4));
 	system("pause");
 }
 

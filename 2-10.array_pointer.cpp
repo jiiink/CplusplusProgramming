@@ -26,6 +26,7 @@ int main (){
 
     //함수 pointer에 plus()함수 주소값 reference
     p = &plus; 
+    printf("Adress of function plus() : %p\n", &plus);
     printf("*p가 plus()함수의 주소값 reference 후 출력 결과\n");
     printf("*p 출력 값: %p\n", *p);
 
@@ -46,6 +47,7 @@ int main (){
     printf("*ap[2])(int, int) 함수 pointer 배열 선언 후 출력 결과\n");
     // plus() 실행
     printf("ap[0](x,y)출력 값: %d\n", ap[0](x, y)); 
+    printf("other expression : %d\n", (*(ap+1))(x, y));
     // plus() 실행
     printf("(*****ap[0])(x,y)출력 값: %d\n",(*****ap[0])(x, y));
     //minus() 실행

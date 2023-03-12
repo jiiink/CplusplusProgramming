@@ -22,7 +22,7 @@ int main(void) {
 	printf("d = %p, d+1 = %p, d[1] = %p\n", d, d+1, d[1]);//d+1은 다음 row를 가리킨다
 	printf("d[0] = %p, d[0]+1 = %p\n", d[0], d[0]+1);//d[0]+1은 각 row의 다음 원소
 	printf("*d = %p, *d+1 = %p\n", *d, *d+1);
-	printf("d[0][0] = %d, *d[0] = %d, **d = %d\n\n\n", d[0][0], *d[0], **d);//d가 array to pointer이지마는 2차원 배열 접근도 가능
+	printf("d[0][0] = %d, *d[1] = %d, **d = %d\n\n\n", d[0][0], *d[1], **d);//d가 array to pointer이지마는 2차원 배열 접근도 가능
 	//*/
 	//주석2
 	//*
@@ -38,5 +38,16 @@ int main(void) {
 	d[1] = a[1]; // 왼쪽 피연산자인 d[0]이 lvalue가 아니므로 error 발생
 	d[2] = a[2]; // 왼쪽 피연산자인 d[0]이 lvalue가 아니므로 error 발생
 	*/
+	
+
+
+
+	int num[] = { 4, 6,7,8,9,10 };
+	int* pNum = num;
+
+	printf("%d\n", *pNum++);
+	printf("%d\n", *pNum);
+
 	system("pause");
+
 }
