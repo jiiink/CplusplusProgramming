@@ -16,6 +16,8 @@ int show(int[][], int);// 구현 가능하게 수정 필요 - 2개 이상 구현해도 된다
 int[][] add(int[][], int, int[][], int);// 구현 가능하게 수정 필요
 int[][] multiply(int[][], int, int[][], int);// 구현 가능하게 수정 필요
 
+//hello?
+
 int main()
 {
     srand(time(NULL));
