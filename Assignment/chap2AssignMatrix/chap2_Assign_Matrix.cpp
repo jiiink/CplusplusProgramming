@@ -17,7 +17,7 @@ int[][] add(int[][], int, int[][], int);// 구현 가능하게 수정 필요
 int[][] multiply(int[][], int, int[][], int);// 구현 가능하게 수정 필요
 
 //hello?
-
+//is that work?
 int main()
 {
     srand(time(NULL));
