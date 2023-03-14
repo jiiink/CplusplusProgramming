@@ -7,6 +7,9 @@ C++ 2차 과제로 2차원 배열을 1차원 배열로 데이터 입력, add, multiply
 #include <stdio.h>
 #include <stdlib.h>
 #include "time.h"
+
+
+
 #define MaxCounts 30
 #define AROWS 3
 #define ACOLS 4
