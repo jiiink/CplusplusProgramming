@@ -20,8 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{C0C0FAA2-B34C-4934-8561-D155CC7688FA}</ProjectGuid>
+    <ProjectGuid>{8907C2A5-BE9F-430A-A193-D2803C15722F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>assignment</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -98,6 +99,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="chap2_Assign_Matrix.cpp" />
+    <ClCompile Include="exercise_OneArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
