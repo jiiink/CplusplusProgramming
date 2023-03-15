@@ -1,7 +1,1 @@
-﻿  exercise_OneArray.cpp
-C:\Users\bhkim\OneDrive - pusan.ac.kr\CplusplusProgramming\Assignment\chap2AssignMatrix\exercise_OneArray.cpp(34): warning C4700: uninitialized local variable 'a3' used
-exercise_OneArray.obj : error LNK2019: unresolved external symbol "bool __cdecl showMatrix(int * const,int,int)" (?showMatrix@@YA_NQEAHHH@Z) referenced in function main
-exercise_OneArray.obj : error LNK2019: unresolved external symbol "int * __cdecl addMatrix(int * const,int,int,int * const,int,int)" (?addMatrix@@YAPEAHQEAHHH0HH@Z) referenced in function main
-exercise_OneArray.obj : error LNK2019: unresolved external symbol "int * __cdecl multiplyMatrix(int * const,int,int,int * const,int,int,int * const,int,int)" (?multiplyMatrix@@YAPEAHQEAHHH0HH0HH@Z) referenced in function main
-exercise_OneArray.obj : error LNK2019: unresolved external symbol "bool __cdecl freeMatrix(int * const,int,int)" (?freeMatrix@@YA_NQEAHHH@Z) referenced in function main
-C:\Users\bhkim\OneDrive - pusan.ac.kr\CplusplusProgramming\Assignment\chap2AssignMatrix\x64\Debug\assignment.exe : fatal error LNK1120: 4 unresolved externals
+﻿  assignment_2.vcxproj -> C:\Users\bhkim\OneDrive - pusan.ac.kr\CplusplusProgramming\Assignment\chap2AssignMatrix\x64\Debug\assignment.exe

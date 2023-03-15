@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chap2_Assign_Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="exercise_OneArray.cpp">
+    <ClCompile Include="exercise_OneArray_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="exercise_OneArray_1.cpp">
