@@ -9,9 +9,6 @@
 #define BCOLS 5
 #define CROWS 3
 #define CCOLS 5
-
-
-
 //int getMatrix(int[][COLS], int);//난수 생성하여 처리 - pointer만 사용하여 구현
 bool showMatrix(int[][COLS], int);
 bool addMatrix(int[][COLS], int, int[][COLS], int, int[][COLS], int);
