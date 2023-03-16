@@ -20,8 +20,15 @@ int main()
 {
     srand(time(NULL));
 
-    int a[] = { 1,0,1,0,1,0,1,1,1,0,0,1 };
-    int b[] = { 1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1 };
+    int a[] = { 1,0,1,0,
+                1,0,1,1,
+                1,0,0,1 };
+
+    int b[] = { 1,1,1,1,0,
+                0,0,0,1,1,
+                1,1,0,0,0,
+                0,1,1,1,1 };
+
     int c[15] = { 0 };
     showMatrix(a, AROWS, ACOLS); showMatrix(b, BROWS, BCOLS);
     bool result;
@@ -40,15 +47,27 @@ void showMatrix(int* a, int r, int c) {
     for (int i = 0; i < r; i++)
     {
     //행렬 출력 구현
-
+        for (int j = 0; j < c; j++) {
+            printf("%d ", *(a + i + j));
+        }
+        printf("\n");
     }
 }
 bool multiplyMatrix(int a[], int ar, int ac, int b[], int br, int bc, int c[], int cr, int cc) {
     if (ac != br)return false;
-    for (int i = 0; i < ar; i++)
-    {
+    
+    for (int i = 0; i < ar; i++) {
+        int value = 0;
+
         for (int j = 0; j < bc; j++) {
     //행렬 곱셈 구현
+            value += *(a + i + j) * *(b + j + i);
+            for (int x = 0; x < cr; x++) {
+                for (int y = 0; y < cc; y++) {
+                    *(c + x + y) = value;
+                }
+            }
+
         }
     }
 
