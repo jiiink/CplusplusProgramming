@@ -100,7 +100,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="chap2_practice1.cpp" />
-    <ClCompile Include="chap2_practice2.cpp" />
+    <ClCompile Include="chap2_practice2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="exercise_OneArray_2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>

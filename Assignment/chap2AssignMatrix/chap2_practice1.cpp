@@ -40,6 +40,7 @@ void showMatrix(int* a, int r, int c) {
     for (int i = 0; i < r; i++)
     {
     //행렬 출력 구현
+
     }
 }
 bool multiplyMatrix(int a[], int ar, int ac, int b[], int br, int bc, int c[], int cr, int cc) {
