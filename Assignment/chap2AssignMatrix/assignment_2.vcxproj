@@ -99,6 +99,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Downloads\2장_수업중실습코드.cpp" />
+    <ClCompile Include="..\..\..\..\Downloads\2장_수업중실습코드_동적할당.cpp" />
     <ClCompile Include="exercise_OneArray_2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
