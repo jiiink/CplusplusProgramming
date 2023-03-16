@@ -62,13 +62,12 @@ bool multiplyMatrix(int a[], int ar, int ac, int b[], int br, int bc, int c[], i
         for (int j = 0; j < bc; j++) {
     //Çà·Ä °ö¼À ±¸Çö
             value += *(a + i + j) * *(b + j + i);
+            
             for (int x = 0; x < cr; x++) {
                 for (int y = 0; y < cc; y++) {
                     *(c + x + y) = value;
                 }
             }
-
         }
     }
-
 }
