@@ -21,10 +21,10 @@
     <ClCompile Include="exercise_OneArray_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\2장_수업중실습코드.cpp">
+    <ClCompile Include="chap2_practice1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\2장_수업중실습코드_동적할당.cpp">
+    <ClCompile Include="chap2_practice2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
