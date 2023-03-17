@@ -56,17 +56,11 @@ void showMatrix(int* a, int r, int c) {
 bool multiplyMatrix(int a[], int ar, int ac, int b[], int br, int bc, int c[], int cr, int cc) {
     if (ac != br)return false;
     
-    for (int i = 0; i < ar; i++) {
-        int value = 0;
-
-        for (int j = 0; j < bc; j++) {
+    for (int x = 0; x < cr; x++) {
+        for (int y = 0; y < cc; y++) {
     //Çà·Ä °ö¼À ±¸Çö
-            value += *(a + i + j) * *(b + j + i);
-            
-            for (int x = 0; x < cr; x++) {
-                for (int y = 0; y < cc; y++) {
-                    *(c + x + y) = value;
-                }
+            for (int i = 0 ; i < ar; i++) {
+                *(c+x+y) += *(a + x + i) * *(b + i + x);
             }
         }
     }
