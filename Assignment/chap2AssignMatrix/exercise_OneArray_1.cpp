@@ -1,5 +1,5 @@
-//2Â÷¿ø ¹è¿­¿¡ ´ëÇÑ Çà·Ä ´õÇÏ±â
-//C++ 1Â÷ °úÁ¦·Î ¹èÆ÷ 
+//2ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+//C++ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 #include <stdio.h>
 #include <stdlib.h>
 #include "time.h"
@@ -9,7 +9,7 @@
 #define BCOLS 5
 #define CROWS 3
 #define CCOLS 5
-//int getMatrix(int[][COLS], int);//³­¼ö »ý¼ºÇÏ¿© Ã³¸® - pointer¸¸ »ç¿ëÇÏ¿© ±¸Çö
+//int getMatrix(int[][COLS], int);//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ Ã³ï¿½ï¿½ - pointerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 bool showMatrix(int(*)[COLS], int);
 bool showMatrixB(int(*arr)[BCOLS], int rows);
 bool showMatrixC(int(*arr)[CCOLS], int rows);
@@ -17,7 +17,7 @@ bool addMatrix(int(*)[COLS], int, int(*)[COLS], int, int(*)[COLS], int);
 bool getMatrixA(int(*arr)[COLS], int rows);
 bool getMatrixB(int(*arr)[BCOLS], int rows);
 bool multiplyMatrix(int(*)[COLS], int, int(*)[BCOLS], int, int(*)[CCOLS], int);
-void main()
+int main()
 {
     srand(time(NULL));
     int a[ROWS][COLS]; int a1[ROWS][COLS]; int a2[ROWS][COLS];
@@ -45,6 +45,7 @@ void main()
     showMatrixC(c, CROWS);
 
     system("pause");
+    return 1;
 }
 
 bool getMatrixA(int(*arr)[COLS], int rows)
@@ -122,7 +123,7 @@ bool multiplyMatrix(int(*arr1)[COLS], int row1, int(*arr2)[BCOLS], int row2, int
         }
     }
 
-    for (int x = 0; x < row3; x++) { //Çà·Ä °ö¼À ±¸Çö
+    for (int x = 0; x < row3; x++) { //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         for (int y = 0; y < CCOLS; y++) {
             for (int i = 0; i < COLS; i++) {
                 *(*(arr3 + x) + y) += *(*(arr1 + x) + i) * *(*(arr2 + i) + y);
