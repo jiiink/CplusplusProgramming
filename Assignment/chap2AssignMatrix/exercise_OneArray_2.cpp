@@ -20,11 +20,11 @@ C++ 2차 과제로 2차원 배열을 1차원 배열로 데이터 입력, add, multiply
 #define DROWS 3
 #define DCOLS 5
 //int getMatrix(int[], int);//난수 생성하여 처리 - pointer만 사용하여 구현
-bool showMatrix(int[], int, int);
-int * addMatrix(int a[], int, int, int b[], int, int);//a = a + b를 계산하고 a를 return
+bool showMatrix(int*, int, int);
+int * addMatrix(int *, int, int, int *, int, int);//a = a + b를 계산하고 a를 return
 int * getMatrix(int, int );
-int * multiplyMatrix(int a[], int, int, int b[], int, int,int c[], int, int);//c = a * b를 계산하고 c를 return
-bool freeMatrix(int[], int, int);
+int * multiplyMatrix(int *, int, int, int*, int, int,int *, int, int);//c = a * b를 계산하고 c를 return
+bool freeMatrix(int *, int, int);
 int main()
 {
     srand(time(NULL));
@@ -33,35 +33,103 @@ int main()
 
     a = getMatrix(AROWS, ACOLS); a1 = getMatrix(AROWS, ACOLS); 
     a2 = getMatrix(AROWS, ACOLS);
-    showMatrix(a, AROWS, ACOLS); showMatrix(a1, AROWS, ACOLS); 
-    showMatrix(a2, AROWS, ACOLS); showMatrix(a3, AROWS, ACOLS);
+    printf("a\n");
+    showMatrix(a, AROWS, ACOLS); 
+    printf("a1\n");
+    showMatrix(a1, AROWS, ACOLS); 
+    printf("a2\n");
+    showMatrix(a2, AROWS, ACOLS); //showMatrix(a3, AROWS, ACOLS);
     
     a3 = addMatrix(addMatrix(a, AROWS, ACOLS, a1, AROWS, ACOLS),AROWS, ACOLS, a2, AROWS, ACOLS);
+    printf("a3\n");
     showMatrix(a3, AROWS, ACOLS);
     b = getMatrix(BROWS, BCOLS);
+    printf("b\n");
     showMatrix(b, BROWS, BCOLS);
     c = getMatrix(BROWS, BCOLS);
+    printf("c\n");
     showMatrix(c, BROWS, BCOLS);
     d = multiplyMatrix(a, AROWS, ACOLS, b, BROWS, BCOLS, c, CROWS, CCOLS);
+    printf("c\n");
     showMatrix(c, BROWS, BCOLS);
+    printf("d\n");
     showMatrix(d, DROWS, DCOLS);
 
     freeMatrix(a, AROWS, ACOLS); freeMatrix(a1, AROWS, ACOLS); freeMatrix(a2, AROWS, ACOLS);
     freeMatrix(b, BROWS, BCOLS); freeMatrix(c, CROWS, CCOLS);
+    
     system("pause");
     return 1;
 }
 
-int * getMatrix(int rows, int cols)
+int * getMatrix(int rows, int cols) {
+    int* arr = (int*)calloc(rows * cols, sizeof(int));
 
-{
-    int *arr = (int *) calloc(rows * cols, sizeof(int));
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < cols; j++)
-        {
-            *arr = rand() % 10;//계산식 수정 필요 
+    if (arr == NULL) {
+        //fail
+        printf("fail\n");
+    }
+    else {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                *(arr + cols * i + j) = rand() % 10;//계산식 수정 필요 
+            }
         }
     }
     return arr;
+}
+
+bool showMatrix(int *arr, int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", *(arr + cols * i + j));
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    return true;
+}
+
+int* addMatrix(int *arr1, int row1, int col1, int *arr2, int row2,  int col2) {
+    for (int i = 0; i < row1; i++) {
+        for (int j = 0; j < col1; j++) {
+            *(arr1 + col1 * i + j) = *(arr1 + col1 * i + j) + *(arr2 + col2 * i + j);
+        }
+    }
+    return arr1;
+}
+
+int* multiplyMatrix(int *arr1, int row1, int col1, int *arr2, int row2, int col2, int *arr3, int row3, int col3) {
+    /*
+    for (int x = 0; x < row3; x++) { 
+        for (int y = 0; y < CCOLS; y++) {
+            *(*(arr3 + x) + y) = 0;
+        }
+    }
+    */
+
+    for (int x = 0; x < row3; x++) { //행렬 곱셈 구현
+        for (int y = 0; y < col3; y++) {
+            for (int i = 0; i < col1; i++) {
+                *(arr3 + col3 * x + y) += *(arr1 + col1 * x + i) * *(arr2 + col2 * i + y);
+            }
+        }
+    }
+
+    return arr3;
+}
+
+bool freeMatrix(int *arr, int row, int col) {
+    /*
+    for (int i = 0; i < row; i++) { //this maybe... free the memory redundantly.. so error is occured
+        for (int j = 0; j < col; j++) {
+            free(arr + col * i + j);
+        }
+    }
+    */
+
+    free(arr);
+
+    return true;
 }
