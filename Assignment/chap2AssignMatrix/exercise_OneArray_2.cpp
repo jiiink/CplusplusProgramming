@@ -1,8 +1,8 @@
-/*2Â÷¿ø ¹è¿­¿¡ ´ëÇÑ Çà·Ä ´õÇÏ±â
-C++ 2Â÷ °úÁ¦·Î 2Â÷¿ø ¹è¿­À» 1Â÷¿ø ¹è¿­·Î µ¥ÀÌÅÍ ÀÔ·Â, add, multiply
-1. getMatrix(row, col)¿¡¼­ Çà·Ä row x col ¸Þ¸ð¸®¸¦ ÇÒ´ç, ³­¼ö °ª ÀÔ·Â
-2. add(a, b)´Â a = a + b·Î °è»ê
-3. multiply(a, b, c)´Â c = a x b·Î ±¸Çö
+/*2ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+C++ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½, add, multiply
+1. getMatrix(row, col)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ row x col ï¿½Þ¸ð¸®¸ï¿½ ï¿½Ò´ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½
+2. add(a, b)ï¿½ï¿½ a = a + bï¿½ï¿½ ï¿½ï¿½ï¿½
+3. multiply(a, b, c)ï¿½ï¿½ c = a x bï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,11 +19,11 @@ C++ 2Â÷ °úÁ¦·Î 2Â÷¿ø ¹è¿­À» 1Â÷¿ø ¹è¿­·Î µ¥ÀÌÅÍ ÀÔ·Â, add, multiply
 #define CCOLS 5
 #define DROWS 3
 #define DCOLS 5
-//int getMatrix(int[], int);//³­¼ö »ý¼ºÇÏ¿© Ã³¸® - pointer¸¸ »ç¿ëÇÏ¿© ±¸Çö
+//int getMatrix(int[], int);//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ Ã³ï¿½ï¿½ - pointerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 bool showMatrix(int*, int, int);
-int * addMatrix(int *, int, int, int *, int, int);//a = a + b¸¦ °è»êÇÏ°í a¸¦ return
+int * addMatrix(int *, int, int, int *, int, int);//a = a + bï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ aï¿½ï¿½ return
 int * getMatrix(int, int );
-int * multiplyMatrix(int *, int, int, int*, int, int,int *, int, int);//c = a * b¸¦ °è»êÇÏ°í c¸¦ return
+int * multiplyMatrix(int *, int, int, int*, int, int,int *, int, int);//c = a * bï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ cï¿½ï¿½ return
 bool freeMatrix(int *, int, int);
 int main()
 {
@@ -31,7 +31,8 @@ int main()
   
     int* a, * a1, * a2, * a3, * b, * c, * d;
 
-    a = getMatrix(AROWS, ACOLS); a1 = getMatrix(AROWS, ACOLS); 
+    a = getMatrix(AROWS, ACOLS); 
+    a1 = getMatrix(AROWS, ACOLS); 
     a2 = getMatrix(AROWS, ACOLS);
     printf("a\n");
     showMatrix(a, AROWS, ACOLS); 
@@ -55,8 +56,11 @@ int main()
     printf("d\n");
     showMatrix(d, DROWS, DCOLS);
 
-    freeMatrix(a, AROWS, ACOLS); freeMatrix(a1, AROWS, ACOLS); freeMatrix(a2, AROWS, ACOLS);
-    freeMatrix(b, BROWS, BCOLS); freeMatrix(c, CROWS, CCOLS);
+    freeMatrix(a, AROWS, ACOLS); 
+    freeMatrix(a1, AROWS, ACOLS); 
+    freeMatrix(a2, AROWS, ACOLS);
+    freeMatrix(b, BROWS, BCOLS); 
+    freeMatrix(c, CROWS, CCOLS);
     
     system("pause");
     return 1;
@@ -72,7 +76,7 @@ int * getMatrix(int rows, int cols) {
     else {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                *(arr + cols * i + j) = rand() % 10;//°è»ê½Ä ¼öÁ¤ ÇÊ¿ä 
+                *(arr + cols * i + j) = rand() % 10;//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ 
             }
         }
     }
@@ -109,7 +113,7 @@ int* multiplyMatrix(int *arr1, int row1, int col1, int *arr2, int row2, int col2
     }
     */
 
-    for (int x = 0; x < row3; x++) { //Çà·Ä °ö¼À ±¸Çö
+    for (int x = 0; x < row3; x++) { //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         for (int y = 0; y < col3; y++) {
             for (int i = 0; i < col1; i++) {
                 *(arr3 + col3 * x + y) += *(arr1 + col1 * x + i) * *(arr2 + col2 * i + y);
